@@ -41,7 +41,7 @@ module "adb" {
     state                            = "AVAILABLE"
     subnet_id                        = oci_core_subnet.coa_atp_private_subnet.id
     vcn_id                           = oci_core_vcn.coa_demo_vcn.id
-    nsg_ids                          = tolist([oci_core_network_security_group.adb_nsg.id])
+    nsg_ids                          = tolist([oci_core_network_security_group.ATPSecurityGroup.id])
     whitelisted_ips                  = []
 
     autonomous_container_database_id               = null
