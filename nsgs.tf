@@ -5,18 +5,27 @@ resource "oci_core_network_security_group" "WebSecurityGroup" {
   compartment_id = var.default_compartment_id
   display_name   = "WebSecurityGroup"
   vcn_id         = oci_core_vcn.coa_demo_vcn.id
+  defined_tags = {
+    "CCA_Basic_Tag.email" = data.oci_identity_user.coa_demo_executer.name
+  }
 }
 
 resource "oci_core_network_security_group" "SSHSecurityGroup" {
   compartment_id = var.default_compartment_id
   display_name   = "SSHSecurityGroup"
   vcn_id         = oci_core_vcn.coa_demo_vcn.id
+  defined_tags = {
+    "CCA_Basic_Tag.email" = data.oci_identity_user.coa_demo_executer.name
+  }
 }
 
 resource "oci_core_network_security_group" "ATPSecurityGroup" {
   compartment_id = var.default_compartment_id
   display_name   = "ATPSecurityGroup"
   vcn_id         = oci_core_vcn.coa_demo_vcn.id
+  defined_tags = {
+    "CCA_Basic_Tag.email" = data.oci_identity_user.coa_demo_executer.name
+  }
 }
 
 # Rules related to ATPSecurityGroup

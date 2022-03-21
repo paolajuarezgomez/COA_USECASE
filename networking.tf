@@ -319,41 +319,11 @@ resource "oci_core_subnet" "coa_atp_private_subnet" {
   dhcp_options_id            = oci_core_dhcp_options.DhcpOptions1.id
   freeform_tags              = var.freeform_tags
   route_table_id             = oci_core_route_table.coa_ig_route_table.id
-  security_list_ids = [oci_core_security_list.coa_vcn_security_list.id, oci_core_security_list.coa_atp_private_subnet_security_list.id]
+  #security_list_ids = [oci_core_security_list.coa_vcn_security_list.id, oci_core_security_list.coa_atp_private_subnet_security_list.id]
 
 }
 
- resource "oci_core_network_security_group" "adb_nsg" {
-  compartment_id = var.default_compartment_id
-  display_name   = "coa_adb_nsg"
-  vcn_id         = oci_core_vcn.coa_demo_vcn.id
-  defined_tags = {
-    "CCA_Basic_Tag.email" = data.oci_identity_user.coa_demo_executer.name
-  }
- }
-
-resource "oci_core_network_security_group_security_rule" "adb_nsg_egress_group_sec_rule" {
-  network_security_group_id = oci_core_network_security_group.adb_nsg.id
-  direction                 = "EGRESS"
-  protocol                  = "6"
-  destination               = var.vcn_cidr
-  destination_type          = "CIDR_BLOCK"
-}
-
-resource "oci_core_network_security_group_security_rule" "adb_nsg_ingress_group_sec_rule" {
-  network_security_group_id = oci_core_network_security_group.adb_nsg.id
-  direction                 = "INGRESS"
-  protocol                  = "6"
-  source                    = var.vcn_cidr
-  source_type               = "CIDR_BLOCK"
-  tcp_options {
-    destination_port_range {
-      max = 1522
-      min = 1522
-    }
-  }
-}
-
+ 
 resource "oci_core_dhcp_options" "DhcpOptions1" {
   compartment_id = var.default_compartment_id
   vcn_id         = oci_core_vcn.coa_demo_vcn.id
