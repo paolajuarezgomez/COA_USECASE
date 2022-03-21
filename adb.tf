@@ -34,7 +34,7 @@ module "adb" {
     nsg_ids                          = null
     refreshable_mode                 = null
     operations_insights_status       = "NOT_ENABLED"
-    private_endpoint_label           = "DBATP1"
+    private_endpoint_label           = "ADBPrivateEndpoint"
     rotate_key_trigger               = null
     scheduled_operations             = [{ "day_of_week" : [{ "name" : "MONDAY" }], "scheduled_start_time" : "09:00", "scheduled_stop_time" : "20:00" }, { "day_of_week" : [{ "name" : "TUESDAY" }], "scheduled_start_time" : "09:00", "scheduled_stop_time" : "20:00" }, { "day_of_week" : [{ "name" : "WEDNESDAY" }], "scheduled_start_time" : "09:00", "scheduled_stop_time" : "20:00" }, { "day_of_week" : [{ "name" : "THURSDAY" }], "scheduled_start_time" : "09:00", "scheduled_stop_time" : "20:00" }, { "day_of_week" : [{ "name" : "FRIDAY" }], "scheduled_start_time" : "09:00", "scheduled_stop_time" : "18:00" }]
     standby_whitelisted_ips          = []
