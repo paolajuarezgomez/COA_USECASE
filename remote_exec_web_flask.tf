@@ -95,7 +95,7 @@ resource "null_resource" "configure_cluster_node_flask" {
       "chmod +x /tmp/flask_bootstrap.sh",
     "sudo /tmp/flask_bootstrap.sh"]
   }
-
+depends_on = [module.adb]
 
 }
 
