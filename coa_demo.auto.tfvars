@@ -72,7 +72,7 @@ install_product = "Flask"
 #############################
 
 # The COA LBaaS Shape
-load_balancer_shape = "10Mbps-Micro"
+load_balancer_shape = "10Mbps"
 
 # LBaaS listening ports
 # Accepted values: ["80", "443", "<port number>"] 
