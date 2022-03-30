@@ -36,13 +36,13 @@
 tenancy_id = "ocid1.tenancy.oc1..aaaaaaaaxzpxbcag7zgamh2erlggqro3y63tvm2rbkkjz4z2zskvagupiz7a"
 
 # Get this from OCI > Identity > Users (for your user account)
-user_id = "ocid1.user.oc1.."
+user_id = "ocid1.user.oc1..aaaaaaaar6rjhipsluhjzugqbbtnq7e6xmqkcduznomeq2szrzzbyazuskpa"
 
 # the fingerprint can be gathered from your user account (OCI > Identity > Users > click your username > API Keys fingerprint (select it, copy it and paste it below))
-fingerprint = ""
+fingerprint = "ca:39:1c:e9:19:77:da:57:6a:6a:62:7f:82:63:be:f0"
 
 # this is the full path on your local system to the private key used for the API key pair
-private_key_path = "/Users/pjuarez/.oci/oci_api_key.pem"
+private_key_path = "/Users/pableider/.oci/oci4cca.pem"
 
 # region (us-phoenix-1, ca-toronto-1, etc)
 region = "eu-frankfurt-1"

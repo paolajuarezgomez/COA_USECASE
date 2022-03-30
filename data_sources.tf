@@ -42,7 +42,7 @@ data "template_file" "flask_bootstrap_template" {
   template = file("./scripts/flask_bootstrap.sh")
 
   vars = {
-    ATP_tde_wallet_zip_file             = "autonomous_data_warehouse_wallet.zip"
+    ATP_tde_wallet_zip_file             = "adb_wallet.zip"
     oracle_instant_client_version       = var.oracle_instant_client_version
     oracle_instant_client_version_short = var.oracle_instant_client_version_short
   }
