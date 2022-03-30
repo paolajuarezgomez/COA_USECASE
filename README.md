@@ -9,7 +9,7 @@ We're going to showcase, by following a realistic usecase, the following:
 
 ## Demo environment arhitecture diagram
 
-![Arhitecture diagram](./Diagrams/COA-Demo-Diagram.drawio.png)
+![Arhitecture diagram](./Diagrams/COA-Demo-Diagram.png)
 
 ## Demo Usecase scenario
 
