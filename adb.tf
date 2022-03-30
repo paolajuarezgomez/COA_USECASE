@@ -3,6 +3,7 @@
 
 module "adb" {
   source = "./modules/oci-terraform-adb/"
+  # source                    = "github.com/paalonso/oci-terraform-adb?ref=v0.2"
 
   # general oci parameters
   default_compartment_id = var.default_compartment_id
