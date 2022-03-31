@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Copyright 2022 Oracle Corporation and/or affiliates.
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl
 
@@ -19,3 +20,59 @@ private_key_path="<path to the private key that matches the fingerprint above>"
 
 # Region (us-phoenix-1, ca-toronto-1, etc)
 region="<your region>"
+=======
+# Copyright (c) 2022, Oracle and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+
+# GETTING STARTED
+#
+# 1. Download and install TerraForm (https://www.terraform.io/downloads.html)
+# 2. Download and install the OCI TerraForm provider (https://github.com/oracle/terraform-provider-oci/)
+# 3. Make sure that you have an OCI API key setup
+#       See https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm for directions on creating an API signing key
+#       See https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Tasks/managingcredentials.htm on how to manage API keys in the OCI UI or API
+# 4. Copy your tenancy OCID below (bottom part of OCI screen, after Tenancy OCID: heading)
+# 5. Copy your OCI user account OCID (login to OCI > Identity > Users)
+# 6. Copy the required API key fingerprint and private key path (below)
+# 7. Fill-in the full path to the SSH public and private keys (this can be used when creating new instances)
+#       See https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/creatingkeys.htm for directions on how to create this key pair
+#
+# HELPFUL URLs
+# * https://github.com/oracle/terraform-provider-oci/blob/master/docs/Table%20of%20Contents.md
+#
+
+# RUNNING TerraForm
+#
+# Once you've gone through the steps mentioned above, you need to populate your environment variables, by sourcing this file... steps are below:
+# 1. Modify this file (so it reflects your OCIDs, etc.)
+# 2. $ terraform init
+#       You only have to do this once after installing or upgrading your TerraForm plugins
+# 3. $ terraform plan
+#       This will show you what TerraForm might do if you applied it
+# 4. $ terraform apply
+
+#############################
+# TENANCY DETAILS
+#############################
+
+# Get this from the bottom of the OCI screen (after logging in, after Tenancy ID: heading)
+tenancy_id = "ocid1.tenancy.oc1.."
+
+# Get this from OCI > Identity > Users (for your user account)
+user_id = "ocid1.user.oc1..aaaaaaaar6rjhipsluhjzugqbbtnq7e6xmqkcduznomeq2szrzzbyazuskpa"
+
+# the fingerprint can be gathered from your user account (OCI > Identity > Users > click your username > API Keys fingerprint (select it, copy it and paste it below))
+fingerprint = "ca:39:1c:e9:19:77:da:57:6a:6a:62:7f:82:63:be:f0"
+
+# this is the full path on your local system to the private key used for the API key pair
+<<<<<<<< HEAD:terraform.tfvars.template
+private_key_path = ""
+========
+private_key_path = "/Users/pableider/.oci/oci4cca.pem"
+>>>>>>>> f27c27327cc77c78192608e8fdc88857f87d24d3:terraform.tfvars
+
+# region (us-phoenix-1, ca-toronto-1, etc)
+region = "eu-frankfurt-1"
+
+
+>>>>>>> f27c27327cc77c78192608e8fdc88857f87d24d3

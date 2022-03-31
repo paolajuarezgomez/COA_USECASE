@@ -6,7 +6,7 @@
 #############################
 
 # default compartment 
-default_compartment_id = "ocid1.compartment.oc1..aaaaaaaahedqv5tl6ih2gpl73ubqawqcte2kcpl5w4rblcch3nxeoxdhh6xq"
+default_compartment_id = "ocid1.compartment.oc1.."
 
 #############################
 # naming convension
@@ -49,23 +49,20 @@ compute_compartment_id = null
 cluster_size = 2
 
 # Compute instances ssh public key
-ssh_public_key_path = "/Users/pableider/.oci/oci4cca.pub"
+ssh_public_key_path = "<add here>"
 
 # Compute instances ssh private key
-ssh_private_key_path = "/Users/pableider/.ssh/oci4cca.pem"
+ssh_private_key_path = "<add here>"
 
 # The name of the shape to be used for all the provisioned compute instances. The automation will automatically figure out the OCID for the spaecific shape name in the target region.
 shape = "VM.Standard1.1"
 
-
 # The name of the image to be used for all the provisioned compute instances. The automation will automatically figure out the OCID for the specific image name in the target region.
 image_name = "Oracle-Linux-8.5-2021.12.08-0"
 
-
 # Which product to install
-# Accepted values: ["Apache", "Nginx", "Flask", "ORDS"] 
+# Accepted values: ["Apache", "Nginx", "Flask"] 
 install_product = "Flask"
-
 
 #############################
 # OCI COA LBaaS

@@ -45,7 +45,7 @@ service firewalld stop
 service firewalld disable
 
 echo '== 4. Unzip TDE wallet zip file'
-unzip -o /tmp/${ATP_tde_wallet_zip_file} -d /usr/lib/oracle/${oracle_instant_client_version_short}/client64/lib/network/admin/
+unzip -o /tmp/adb_wallet.zip -d /usr/lib/oracle/${oracle_instant_client_version_short}/client64/lib/network/admin/
 
 echo '== 5. Move sqlnet.ora to /usr/lib/oracle/${oracle_instant_client_version_short}/client64/lib/network/admin/'
 cp /tmp/sqlnet.ora /usr/lib/oracle/${oracle_instant_client_version_short}/client64/lib/network/admin/
