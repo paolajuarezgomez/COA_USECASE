@@ -50,9 +50,9 @@ On this topology we'll be able to demostrate the operations described bellow.
 * Cluster Scale Up/Down
 
 ## Steps
-* Clone this repo in OraHun, GitLab or GitHub and create you own repository.
+* Clone this repo in OraHub, GitLab or GitHub and create you own repository.
 * Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your tenancy_ocid and compartment_ocid
-* Review and change if you want the values added in coa.auto.tfvars
+* Review and change if you want the values added in **coa_demo.auto.tfvars**
 
 ## Terraform project design and best practices
 This automation example is meant to also cover a set of terraform coding example and best practices and provide some stardardisation of how a terraform project should be structured.
