@@ -43,11 +43,11 @@ On this topology we'll be able to demostrate the operations described bellow.
 
 * Infrastructure provisioning
 * Configuration management
-* Include configuration into the terraform dependency graph(install/uninstall) - TBA
+* Include configuration into the terraform dependency graph(install/uninstall) - (TBA)
 * Change management system - ex. open port
-* SSH public key rotation 
-* LBaaS Certificate rotation
-* Cluster Scale Up/Down
+* SSH public key rotation (TBA)
+* LBaaS Certificate rotation (TBA)
+* Cluster Scale Up/Down (TBA)
 
 ## Steps
 * Clone this repo in OraHub, GitLab or GitHub and create you own repository.
