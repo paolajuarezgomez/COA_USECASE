@@ -4,5 +4,5 @@ The Load Balancing service does not generate SSL certificates. It can only impor
 
 This document will explain how to create your SSL certificates for the load balancer using your own CA  self signed certificate.
 
-**Oracle Cloud Infrastructure - How Create a SSL Certificate for a Load Balancer (Doc ID 2617046.1)	**
+**Oracle Cloud Infrastructure - How Create a SSL Certificate for a Load Balancer (Doc ID 2617046.1)**
 
