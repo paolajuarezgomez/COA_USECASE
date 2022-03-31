@@ -1,12 +1,8 @@
-# COA DevOps Training UseCase
-This project provides the documentation and the automation(code) for the Oracle EMEA WLA COA Demo UseCase.
+# How to create Load Balancer certificates
 
-We're going to showcase, by following a realistic usecase, the following:
-* a recomended terraform demo template
-* abstracting terraform configuration
-* best practices around: code, project structure, data structures, optional configuration, functions and many more
-* we'll drive you through a few operations scenarios use-cases that cover both IaC and configuration management.
+The Load Balancing service does not generate SSL certificates. It can only import an existing certificate that you already own. The certificate can be one issued by a vendor, such as Verisign or GoDaddy. You can also use a self-signed certificate that you generate with an open source tool
 
-## Demo environment arhitecture diagram
+This document will explain how to create your SSL certificates for the load balancer using your own CA  self signed certificate.
 
-![Arhitecture diagram](./Diagrams/COA-Demo-Diagram.png)
+**Oracle Cloud Infrastructure - How Create a SSL Certificate for a Load Balancer (Doc ID 2617046.1)	**
+
