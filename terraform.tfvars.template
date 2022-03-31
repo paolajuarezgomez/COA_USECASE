@@ -33,7 +33,7 @@
 #############################
 
 # Get this from the bottom of the OCI screen (after logging in, after Tenancy ID: heading)
-tenancy_id = "ocid1.tenancy.oc1..aaaaaaaaxzpxbcag7zgamh2erlggqro3y63tvm2rbkkjz4z2zskvagupiz7a"
+tenancy_id = "ocid1.tenancy.oc1.."
 
 # Get this from OCI > Identity > Users (for your user account)
 user_id = "ocid1.user.oc1.."
@@ -42,7 +42,7 @@ user_id = "ocid1.user.oc1.."
 fingerprint = ""
 
 # this is the full path on your local system to the private key used for the API key pair
-private_key_path = "/Users/pjuarez/.oci/oci_api_key.pem"
+private_key_path = ""
 
 # region (us-phoenix-1, ca-toronto-1, etc)
 region = "eu-frankfurt-1"
