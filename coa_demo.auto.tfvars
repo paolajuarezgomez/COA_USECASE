@@ -6,7 +6,7 @@
 #############################
 
 # default compartment 
-default_compartment_id = "ocid1.compartment.oc1..aaaaaaaaes3c3pxlxbcd2upv4vh7wbdfd7vgywuaa75izuu3otrb2omhekaa"
+default_compartment_id = "ocid1.compartment.oc1..aaaaaaaahedqv5tl6ih2gpl73ubqawqcte2kcpl5w4rblcch3nxeoxdhh6xq"
 
 #############################
 # naming convension
@@ -49,10 +49,10 @@ compute_compartment_id = null
 cluster_size = 2
 
 # Compute instances ssh public key
-ssh_public_key_path = "/Users/pjuarez/.oci/ssh_key/id_rsa.pub"
+ssh_public_key_path = "/Users/pableider/.oci/oci4cca.pub"
 
 # Compute instances ssh private key
-ssh_private_key_path = "/Users/pjuarez/.oci/ssh_key/id_rsa"
+ssh_private_key_path = "/Users/pableider/.ssh/oci4cca.pem"
 
 # The name of the shape to be used for all the provisioned compute instances. The automation will automatically figure out the OCID for the spaecific shape name in the target region.
 shape = "VM.Standard1.1"
@@ -72,7 +72,7 @@ install_product = "Flask"
 #############################
 
 # The COA LBaaS Shape
-load_balancer_shape = "10Mbps-Micro"
+load_balancer_shape = "10Mbps"
 
 # LBaaS listening ports
 # Accepted values: ["80", "443", "<port number>"] 
@@ -92,11 +92,11 @@ lb_public_certificate = "./certs/loadbalancer.crt"
 
 
 #############################
-# ADB
+# OCI COA ADB
 #############################
 
 adb_password     = "TestATP2022."
 adb_workload     = "OLTP"
-adb_db_name      = "ADBATPCOA"
-adb_display_name = "ADBATPCOA"
+adb_db_name      = "ADBCOADEMO1"
+adb_display_name = "ADBCOADEMO1"
 adb_db_version   = "19c"

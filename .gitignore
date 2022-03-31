@@ -1,0 +1,16 @@
+# OS misc files
+.DS_Store
+
+# Terraform directories
+.terraform/
+
+# Terraform lock files
+.terraform.lock.hcl
+.terraform.tfstate.lock.info
+
+# Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+
+# Terraform state files
+terraform.tfvars

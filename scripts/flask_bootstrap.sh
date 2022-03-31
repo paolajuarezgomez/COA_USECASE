@@ -1,15 +1,5 @@
 #!/bin/bash
 
-#echo '== 1. Install Oracle instant client'
-#if [[ $(uname -r | sed 's/^.*\(el[0-9]\+\).*$/\1/') == "el8" ]]
-#then 
-#   dnf install -y oracle-instantclient-release-el8
-#   dnf install -y oracle-instantclient-basic
-#else
-#  yum install -y oracle-instantclient-release-el7
-#  yum install -y oracle-instantclient-basic
-#fi 
-
 # Install Oracle instant client
 
 echo '== 1. Install Oracle instant client & Python3 stuff'

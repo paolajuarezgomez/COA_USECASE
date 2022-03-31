@@ -2,7 +2,8 @@
 ## All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
 
 module "adb" {
-  source = "./modules/COA_adb/"
+  source = "./modules/oci-terraform-adb/"
+  # source                    = "github.com/paalonso/oci-terraform-adb?ref=v0.2"
 
   # general oci parameters
   default_compartment_id = var.default_compartment_id
@@ -16,7 +17,7 @@ module "adb" {
     are_primary_whitelisted_ips_used = null
     ocpu_count                       = null
     cpu_core_count                   = "1"
-    customer_contacts                = [{ "email" : "pablo.alonso@oracle.com" }]
+    customer_contacts                = []
     data_storage_size_in_gb          = null
     data_storage_size_in_tbs         = "1"
     data_safe_status                 = "NOT_REGISTERED"
@@ -34,13 +35,12 @@ module "adb" {
     nsg_ids                          = null
     refreshable_mode                 = null
     operations_insights_status       = "NOT_ENABLED"
-    private_endpoint_label           = "DBATP1"
+    private_endpoint_label           = var.adb_db_name
     rotate_key_trigger               = null
-    scheduled_operations             = [{ "day_of_week" : [{ "name" : "MONDAY" }], "scheduled_start_time" : "09:00", "scheduled_stop_time" : "20:00" }, { "day_of_week" : [{ "name" : "TUESDAY" }], "scheduled_start_time" : "09:00", "scheduled_stop_time" : "20:00" }, { "day_of_week" : [{ "name" : "WEDNESDAY" }], "scheduled_start_time" : "09:00", "scheduled_stop_time" : "20:00" }, { "day_of_week" : [{ "name" : "THURSDAY" }], "scheduled_start_time" : "09:00", "scheduled_stop_time" : "20:00" }, { "day_of_week" : [{ "name" : "FRIDAY" }], "scheduled_start_time" : "09:00", "scheduled_stop_time" : "18:00" }]
+    scheduled_operations             = []
     standby_whitelisted_ips          = []
     state                            = "AVAILABLE"
     subnet_id                        = oci_core_subnet.coa_atp_private_subnet.id
-    vcn_id                           = oci_core_vcn.coa_demo_vcn.id
     nsg_ids                          = tolist([oci_core_network_security_group.ATPSecurityGroup.id])
     whitelisted_ips                  = []
 
@@ -58,7 +58,6 @@ module "adb" {
     timestamp                                      = null
     vault_id                                       = ""
   }
-
 }
 
 resource "local_file" "adb_wallet_file" {

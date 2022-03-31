@@ -101,7 +101,7 @@ variable "private_atp_subnet_cidr" {
 }
 
 #############################
-# OCI COA NGINX Instances
+# OCI COA WEB Instances
 #############################
 
 # The specific compute compartment id. If this is null then the default, project level compartment_id will be used.
@@ -141,7 +141,7 @@ variable "image_name" {
 }
 
 # Which product to install
-# Accepted values: ["Apache", "Nginx"] 
+# Accepted values: ["Apache", "Nginx", "Flask"] 
 variable "install_product" {
   type        = string
   default     = "Nginx"
@@ -196,48 +196,45 @@ variable "lb_public_certificate" {
 
 variable "adb_password" {
   type = string
+  description = "Initial ADB ADMIN user password"
 }
 
 variable "adb_db_name" {
-  default = "atppriv"
+  type = string
+  description = "ADB DB Name"
 }
 
 variable "adb_display_name" {
-  default = "COA_ATP_priv"
+  type = string
+  description = "ADB display name shown in the console"
 }
 
 variable "adb_db_version" {
+  type = string
   default = "19c"
+  description = "ADB Oracle database version"
 }
 
 variable "adb_workload" {
-  default = ""
+  type = string
+  default = "OLTP"
+  description = "ADB workload type: OLTP, DW"
 }
 
 variable "ATP_tde_wallet_zip_file" {
-
+  type = string
   default = "adb_wallet.zip"
-}
-variable "adb_wallet_password_specials" {
-  default = true
-}
-
-variable "adb_wallet_password_length" {
-  default = 16
-}
-
-variable "adb_wallet_password_min_numeric" {
-  default = 2
-}
-
-variable "adb_wallet_password_override_special" {
-  default = ""
+  description = "Name of the file where to store the ADB wallet"
 }
 
 variable "oracle_instant_client_version" {
+  type = string
   default = "19.10"
+  description = "Oracle client version"
 }
 
 variable "oracle_instant_client_version_short" {
+  type = string
   default = "19.10"
+  description = "Oracle client version short name"
 }

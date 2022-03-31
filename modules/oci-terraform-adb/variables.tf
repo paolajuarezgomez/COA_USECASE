@@ -70,7 +70,6 @@ variable default_compartment_id {
   type = string
 }
 
-
 variable "adb_wallet_password_specials" {
   default = true
 }
