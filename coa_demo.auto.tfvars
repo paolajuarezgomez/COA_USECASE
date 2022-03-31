@@ -6,7 +6,7 @@
 #############################
 
 # default compartment 
-default_compartment_id = "ocid1.compartment.oc1..aaaaaaaaes3c3pxlxbcd2upv4vh7wbdfd7vgywuaa75izuu3otrb2omhekaa"
+default_compartment_id = "ocid1.compartment.oc1.."
 
 #############################
 # naming convension
@@ -63,7 +63,7 @@ image_name = "Oracle-Linux-8.5-2021.12.08-0"
 
 
 # Which product to install
-# Accepted values: ["Apache", "Nginx", "Flask", "ORDS"] 
+# Accepted values: ["Apache", "Nginx", "Flask"] 
 install_product = "Flask"
 
 
