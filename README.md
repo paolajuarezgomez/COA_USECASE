@@ -38,6 +38,13 @@ In this example a DevOps engineer will leverage an IaC and Configuration Managem
 
 On this topology we'll be able to demostrate the operations described bellow.
 
+
+## Steps
+* Clone this repo in GitLab or GitHub and create you own repository.
+* Add your api_private_key to the file user.pem
+* Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your tenancy_ocid and compartment_ocid
+* Review and change if you want the values added in coa.auto.tfvars
+
 ## Demo automation supported operations
 
 * Infrastructure provisioning
