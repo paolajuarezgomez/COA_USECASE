@@ -16,7 +16,7 @@ module "adb" {
     admin_password                   = var.adb_password
     are_primary_whitelisted_ips_used = null
     ocpu_count                       = null
-    cpu_core_count                   = "1"
+    cpu_core_count                   = "2"
     customer_contacts                = []
     data_storage_size_in_gb          = null
     data_storage_size_in_tbs         = "1"
