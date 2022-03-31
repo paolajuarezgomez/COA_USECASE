@@ -1,5 +1,5 @@
 # COA DevOps Training UseCase
-This project provides the documentation and the automation(code) for the Oracle EMEA WLA COA Demo UseCase.
+This project provides the documentation and the automation code for the Oracle EMEA WLA COA Demo UseCase.
 
 We're going to showcase, by following a realistic usecase, the following:
 * a recomended terraform demo template
@@ -53,6 +53,14 @@ On this topology we'll be able to demostrate the operations described bellow.
 * Clone this repo in OraHub, GitLab or GitHub and create you own repository.
 * Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of tenancy_ocid,user_id,fingerprint,private_key_path and region
 * Review and change if you want the values included in **coa_demo.auto.tfvars** ,add at least the values of compartment_ocid,ssh_public_key_path and ssh_private_key_path 
+* run terraform steps:
+
+````
+terraform init
+terraform plan
+terraform apply --auto-aprove
+````
+* Review the outputs and search for the Load Balancer public Ip and check you can connect to the Flask app
 
 ## Terraform project design and best practices
 This automation example is meant to also cover a set of terraform coding examples and best practices and provide some standardization of how a terraform project should be structured.
