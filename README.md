@@ -4,9 +4,8 @@ This project provides the documentation and the automation(code) for the Oracle 
 We're going to showcase, by following a realistic usecase, the following:
 * a recomended terraform demo template
 * abstracting terraform configuration
-* best practices around: code, project structure, data structures, optional configuration, functions and many more
+* best practices around: code, project structure, data structures, optional configuration, functions, modules  and many more
 * we'll drive you through a few operations scenarios use-cases that cover both IaC and configuration management
-* How to use terraform modules
 
 ## Demo environment arhitecture diagram
 
@@ -29,21 +28,16 @@ In this example a DevOps engineer will leverage an IaC and Configuration Managem
             *  backend set containing:
                 * a configurable number of backend servers 
             * a configurable number of listerners with SSL/no-SSL option
-* running the folloiwng configuration(terraform remote exec provider) on the provisioned VMs:
+    * ATP-S database
+    
+* running the following configuration(terraform remote exec provider) on the provisioned VMs:
     * on bastion host:
         * upload the private ssh_key to access the backend webserver VMs
     * on the WEB Server VMs:
         * configure ```iptables``` to open port 80
-        * install NGINX,  Apache webserver or Flask, configure them to listen on port ```80```, upload a custom ```HTML``` page and start the servers.
+        * install NGINX,  Apache webserver or Flask (we are choosing Flask) configure them to listen on port ```80```, upload a custom ```HTML``` page and start the servers.
 
 On this topology we'll be able to demostrate the operations described bellow.
-
-
-## Steps
-* Clone this repo in GitLab or GitHub and create you own repository.
-* Add your api_private_key to the file user.pem
-* Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your tenancy_ocid and compartment_ocid
-* Review and change if you want the values added in coa.auto.tfvars
 
 ## Demo automation supported operations
 
@@ -54,6 +48,11 @@ On this topology we'll be able to demostrate the operations described bellow.
 * SSH public key rotation 
 * LBaaS Certificate rotation
 * Cluster Scale Up/Down
+
+## Steps
+* Clone this repo in OraHun, GitLab or GitHub and create you own repository.
+* Rename the file **terraform.tfvars.template** to **terraform.tfvars** and add the values of your tenancy_ocid and compartment_ocid
+* Review and change if you want the values added in coa.auto.tfvars
 
 ## Terraform project design and best practices
 This automation example is meant to also cover a set of terraform coding example and best practices and provide some stardardisation of how a terraform project should be structured.
