@@ -35,7 +35,7 @@ In this example a DevOps engineer will leverage an IaC and Configuration Managem
         * upload the private ssh_key to access the backend webserver VMs
     * on the WEB Server VMs:
         * configure ```iptables``` to open port 80
-        * install NGINX,  Apache webserver or Flask (we are choosing Flask) configure them to listen on port ```80```, upload a custom ```HTML``` page and start the servers.
+        * install NGINX,  Apache webserver or Flask (we are choosing Flask) configure them to listen on port ```80```.
 
 On this topology we'll be able to demostrate the operations described bellow.
 
