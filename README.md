@@ -5,7 +5,8 @@ We're going to showcase, by following a realistic usecase, the following:
 * a recomended terraform demo template
 * abstracting terraform configuration
 * best practices around: code, project structure, data structures, optional configuration, functions and many more
-* we'll drive you through a few operations scenarios use-cases that cover both IaC and configuration management.
+* we'll drive you through a few operations scenarios use-cases that cover both IaC and configuration management
+* How to use terraform modules
 
 ## Demo environment arhitecture diagram
 
