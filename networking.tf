@@ -319,8 +319,6 @@ resource "oci_core_subnet" "coa_atp_private_subnet" {
   dhcp_options_id            = oci_core_dhcp_options.DhcpOptions1.id
   freeform_tags              = var.freeform_tags
   route_table_id             = oci_core_route_table.coa_ig_route_table.id
-  #security_list_ids = [oci_core_security_list.coa_vcn_security_list.id, oci_core_security_list.coa_atp_private_subnet_security_list.id]
-
 }
 
  

@@ -31,10 +31,6 @@ resource "null_resource" "configure_cluster_node_flask" {
     destination = "/tmp/adb_wallet.zip"
   }
 
-  #provisioner "local-exec" {
-  #   command = "rm -rf ${path.module}/autonomous_data_warehouse_wallet.zip"
-  # }
-
   provisioner "file" {
     connection {
       type         = "ssh"

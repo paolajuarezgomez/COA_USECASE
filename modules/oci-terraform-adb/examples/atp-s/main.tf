@@ -53,17 +53,9 @@ module "DBATP1" {
         timestamp                            = null
         vault_id                             = ""
     }
+}
 
-    wallet_password = {
-        length                               = "16"
-        special                              = true 
-        min_numeric                          = 2
-        override_special                     = ""
-    }
-
-    # adb_wallet = {
-    #     autonomous_database_id               = module.adb.DBATP1.adb_id
-    #     password                             = wallet_password.result
-    #     base64_encode_content                = true
-    # }
+resource "local_file" "adb_wallet_file" {
+  content_base64 = module.DBATP1.adb_database.adb_wallet_content
+  filename       = "${path.module}/adb_wallet.zip"
 }
