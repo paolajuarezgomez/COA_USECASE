@@ -2,35 +2,22 @@
 # Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
 
 
-#
-#output "adb_database" {
-#  value = {
-#    value = module.adb
-#  }
-#}
-
-#output "ADB-wallet-content" {
-#  value = module.adb.adb_database.adb_wallet_content
-#}
-
-
 
 locals {
 
-#########################
-## ADB
-#########################
+  #########################
+  ## ADB
+  #########################
+ #
+ # adb_details = {
+ #   adb            = module.adb.adb_database
+ #   wallet_content = module.adb.adb_database.adb_wallet_content
+ # }
 
-  adb_details ={
-  adb= module.adb.adb_database
-  wallet_content= module.adb.adb_database.adb_wallet_content
 
-  }
-
-
-#########################
-## Networking Details
-#########################
+  #########################
+  ## Networking Details
+  #########################
 
 
   networking_details = {

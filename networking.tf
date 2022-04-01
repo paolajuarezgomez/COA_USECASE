@@ -321,7 +321,7 @@ resource "oci_core_subnet" "coa_atp_private_subnet" {
   route_table_id             = oci_core_route_table.coa_ig_route_table.id
 }
 
- 
+
 resource "oci_core_dhcp_options" "DhcpOptions1" {
   compartment_id = var.default_compartment_id
   vcn_id         = oci_core_vcn.coa_demo_vcn.id
