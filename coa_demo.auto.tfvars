@@ -6,7 +6,7 @@
 #############################
 
 # default compartment 
-default_compartment_id = "ocid1.compartment.oc1.."
+default_compartment_id = "ocid1.compartment.oc1..aaaaaaaaes3c3pxlxbcd2upv4vh7wbdfd7vgywuaa75izuu3otrb2omhekaa"
 
 #############################
 # naming convension
@@ -39,32 +39,6 @@ private_subnet_cidr = "10.0.0.0/24"
 public_subnet_cidr = "10.0.10.0/24"
 
 #############################
-# OCI COA WEB Instances
-#############################
-
-# The specific compute compartment id. If this is null then the default, project level compartment_id will be used.
-compute_compartment_id = null
-
-# The number of cluster nodes to be provisioned
-cluster_size = 2
-
-# Compute instances ssh public key
-ssh_public_key_path = "<add here>"
-
-# Compute instances ssh private key
-ssh_private_key_path = "<add here>"
-
-# The name of the shape to be used for all the provisioned compute instances. The automation will automatically figure out the OCID for the spaecific shape name in the target region.
-shape = "VM.Standard1.1"
-
-# The name of the image to be used for all the provisioned compute instances. The automation will automatically figure out the OCID for the specific image name in the target region.
-image_name = "Oracle-Linux-8.5-2021.12.08-0"
-
-# Which product to install
-# Accepted values: ["Apache", "Nginx", "Flask"] 
-install_product = "Flask"
-
-#############################
 # OCI COA LBaaS
 #############################
 
@@ -87,11 +61,38 @@ lb_private_key = "./certs/loadbalancer.key"
 # Only used if port SSL:443 is enabled
 lb_public_certificate = "./certs/loadbalancer.crt"
 
+#############################
+# OCI COA WEB Instances
+#############################
+
+# The specific compute compartment id. If this is null then the default, project level compartment_id will be used.
+compute_compartment_id = null
+
+# The number of cluster nodes to be provisioned
+cluster_size = 2
+
+# Compute instances ssh public key
+ssh_public_key_path = "/Users/pjuarez/.oci/ssh_key/id_rsa.pub"
+
+# Compute instances ssh private key
+ssh_private_key_path = "/Users/pjuarez/.oci/ssh_key/id_rsa"
+
+# The name of the shape to be used for all the provisioned compute instances. The automation will automatically figure out the OCID for the spaecific shape name in the target region.
+shape = "VM.Standard1.1"
+
+# The name of the image to be used for all the provisioned compute instances. The automation will automatically figure out the OCID for the specific image name in the target region.
+image_name = "Oracle-Linux-8.5-2021.12.08-0"
+
+# Which product to install
+# Accepted values: ["Apache", "Nginx", "Flask"] 
+install_product = "Flask"
+
 
 #############################
 # OCI COA ADB
 #############################
 
+deploy_adb       = "True"
 adb_password     = "TestATP2022."
 adb_workload     = "OLTP"
 adb_db_name      = "ADBCOADEMO1"

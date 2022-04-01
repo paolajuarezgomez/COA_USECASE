@@ -1,5 +1,5 @@
 resource "null_resource" "configure_cluster_node_flask" {
-  count = var.install_product == "Flask" ? var.cluster_size : 0
+  count = var.install_product == "Flask" && var.deploy_adb == "True" ? var.cluster_size : 0
 
   provisioner "file" {
     connection {

@@ -2,6 +2,7 @@
 ## All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
 
 module "adb" {
+  count  =  var.deploy_adb == "True" ? 1 : 0
   source = "./modules/oci-terraform-adb/"
   # source                    = "github.com/paalonso/oci-terraform-adb?ref=v0.2"
 
@@ -61,7 +62,8 @@ module "adb" {
 }
 
 resource "local_file" "adb_wallet_file" {
-  content_base64 = module.adb.adb_database.adb_wallet_content
+  count          = var.deploy_adb == "True" ? 1 : 0
+  content_base64 = module.adb[count.index].adb_database.adb_wallet_content
   filename       = "${path.module}/adb_wallet.zip"
 }
 

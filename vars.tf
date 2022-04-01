@@ -100,6 +100,46 @@ variable "private_atp_subnet_cidr" {
   description = "private subnet CIDR"
 }
 
+
+#############################
+# OCI COA LBaaS
+#############################
+
+# The COA LBaaS Shape
+variable "load_balancer_shape" {
+  type        = string
+  default     = "10Mbps-Micro"
+  description = "The COA LBaaS Shape"
+}
+
+# LBaaS listening ports
+# Accepted values: ["80", "443", "<port number>"] 
+variable "lbaas_listening_ports" {
+  type        = list(string)
+  default     = ["443"]
+  description = "Accepted values: [80, 443, port number]"
+}
+
+# The path to the load balancer CA certificate
+variable "lb_ca_certificate" {
+  type        = string
+  default     = "./certs/ca.crt"
+  description = "The path to the load balancer CA certificate"
+}
+
+# The path to the load balancer private_key
+variable "lb_private_key" {
+  type        = string
+  default     = "./certs/loadbalancer.key"
+  description = "The path to the load balancer private_key"
+}
+
+# The path to the load balancer public_certificate
+variable "lb_public_certificate" {
+  type        = string
+  default     = "./certs/loadbalancer.crt"
+  description = "The path to the load balancer public_certificate"
+}
 #############################
 # OCI COA WEB Instances
 #############################
@@ -145,96 +185,64 @@ variable "image_name" {
 variable "install_product" {
   type        = string
   default     = "Nginx"
-  description = "Accepted values: [Apache, Nginx, Flask, ORDS]"
+  description = "Accepted values: [Apache, Nginx, Flask]"
 }
 
-#############################
-# OCI COA LBaaS
-#############################
-
-# The COA LBaaS Shape
-variable "load_balancer_shape" {
-  type        = string
-  default     = "10Mbps-Micro"
-  description = "The COA LBaaS Shape"
-}
-
-# LBaaS listening ports
-# Accepted values: ["80", "443", "<port number>"] 
-variable "lbaas_listening_ports" {
-  type        = list(string)
-  default     = ["443"]
-  description = "Accepted values: [80, 443, port number]"
-}
-
-# The path to the load balancer CA certificate
-variable "lb_ca_certificate" {
-  type        = string
-  default     = "./certs/ca.crt"
-  description = "The path to the load balancer CA certificate"
-}
-
-# The path to the load balancer private_key
-variable "lb_private_key" {
-  type        = string
-  default     = "./certs/loadbalancer.key"
-  description = "The path to the load balancer private_key"
-}
-
-# The path to the load balancer public_certificate
-variable "lb_public_certificate" {
-  type        = string
-  default     = "./certs/loadbalancer.crt"
-  description = "The path to the load balancer public_certificate"
-}
 
 
 #############################
 # ADB
 #############################
 
+# Deploy Database Layer. If you deploy this layer you have to choose Flask option in the previus step
+# Accepted values: ["True", "False"] 
+variable "deploy_adb" {
+  type        = string
+  default     = "True"
+  description = "Accepted values: [True, False]"
+}
 
 variable "adb_password" {
-  type = string
+  type        = string
   description = "Initial ADB ADMIN user password"
 }
 
 variable "adb_db_name" {
-  type = string
+  type        = string
   description = "ADB DB Name"
 }
 
 variable "adb_display_name" {
-  type = string
+  type        = string
   description = "ADB display name shown in the console"
 }
 
 variable "adb_db_version" {
-  type = string
-  default = "19c"
+  type        = string
+  default     = "19c"
   description = "ADB Oracle database version"
 }
 
 variable "adb_workload" {
-  type = string
-  default = "OLTP"
+  type        = string
+  default     = "OLTP"
   description = "ADB workload type: OLTP, DW"
 }
 
 variable "ATP_tde_wallet_zip_file" {
-  type = string
-  default = "adb_wallet.zip"
+  type        = string
+  default     = "adb_wallet.zip"
   description = "Name of the file where to store the ADB wallet"
 }
 
 variable "oracle_instant_client_version" {
-  type = string
-  default = "19.10"
+  type        = string
+  default     = "19.10"
   description = "Oracle client version"
 }
 
 variable "oracle_instant_client_version_short" {
-  type = string
-  default = "19.10"
+  type        = string
+  default     = "19.10"
   description = "Oracle client version short name"
 }
