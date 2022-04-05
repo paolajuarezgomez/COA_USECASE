@@ -1,0 +1,21 @@
+# Copyright 2022 Oracle Corporation and/or affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl
+
+# NOTICE: You should avoid to push the "terraform.tfvars" file for pushing to your GIT by adding to .gitignore
+
+# Needed variables to setup Terraform for being access to connect with a valir user authorized to create resources in your tenancy and compartment.
+
+# Get this from the bottom of the OCI screen (after logging in, after Tenancy ID: heading)
+tenancy_id = ""
+
+# Get this from OCI > Identity > Users (for your user account)
+user_id = "ocid1.user.oc1.."
+
+# the fingerprint can be gathered from your user account (OCI > Identity > Users > click your username > API Keys fingerprint (select it, copy it and paste it below))
+fingerprint = ""
+
+# this is the full path on your local system to the private key used for the API key pair
+private_key_path = ""
+
+# region (us-phoenix-1, ca-toronto-1, etc)
+region = "eu-frankfurt-1"%    
