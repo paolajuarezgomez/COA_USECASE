@@ -72,10 +72,10 @@ compute_compartment_id = null
 cluster_size = 2
 
 # Compute instances ssh public key
-ssh_public_key_path = "/Users/pjuarez/.oci/ssh_key/id_rsa.pub"
+ssh_public_key_path = "<>"
 
 # Compute instances ssh private key
-ssh_private_key_path = "/Users/pjuarez/.oci/ssh_key/id_rsa"
+ssh_private_key_path = "<>"
 
 # The name of the shape to be used for all the provisioned compute instances. The automation will automatically figure out the OCID for the spaecific shape name in the target region.
 shape = "VM.Standard1.1"
