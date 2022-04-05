@@ -136,11 +136,7 @@ output "COA_Demo_Details" {
 ## Storage
 #########################
 
-output "bucket" {
-  value = {
-    bucketname = data.oci_objectstorage_objects.test_objects.bucket
-  }
-}
+
 
 #########################
 ## ADB
