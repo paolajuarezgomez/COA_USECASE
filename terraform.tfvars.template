@@ -18,4 +18,4 @@ fingerprint = ""
 private_key_path = ""
 
 # region (us-phoenix-1, ca-toronto-1, etc)
-region = "eu-frankfurt-1"%    
+region = "eu-frankfurt-1"
