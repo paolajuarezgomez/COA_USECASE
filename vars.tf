@@ -246,3 +246,29 @@ variable "oracle_instant_client_version_short" {
   default     = "19.10"
   description = "Oracle client version short name"
 }
+
+variable "create_bucket" {
+  type        = string
+  default     = "True"
+  description = "create Bucket for manual Backups"
+}
+
+variable "conf_manual_backup" {
+  type        = string
+  default     = "True"
+  description = "condition to conf manua backup"
+}
+
+variable "conn_db" {
+  default = ""
+}
+
+variable "username" {
+  default = ""
+  sensitive   = true
+}
+
+variable "password" {
+  default = ""
+  sensitive   = true
+}

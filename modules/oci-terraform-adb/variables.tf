@@ -86,3 +86,7 @@ variable "adb_wallet_password_override_special" {
   default = ""
 }
 
+variable "conn_db" {
+  default = ""
+}
+

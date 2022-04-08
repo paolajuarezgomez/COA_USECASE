@@ -2,7 +2,7 @@
 ## All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
 
 module "adb" {
-  count  =  var.deploy_adb == "True" ? 1 : 0
+  count  = var.deploy_adb == "True" ? 1 : 0
   source = "./modules/oci-terraform-adb/"
   # source                    = "github.com/paalonso/oci-terraform-adb?ref=v0.2"
 

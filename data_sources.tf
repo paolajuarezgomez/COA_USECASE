@@ -30,6 +30,42 @@ data "template_file" "flask_ATP_py_template" {
   }
 }
 
+
+data "template_file" "configure_backup_template" {
+  template = file("./scripts/config_backup.sql")
+
+  vars = {
+    ATP_password = var.adb_password
+    region       = var.region
+    bucket       = "${var.names_prefix}bucket"
+    namespace    = data.oci_objectstorage_namespace.user_namespace.namespace
+    username     = var.username
+    password     = var.password
+  }
+}
+
+
+data "template_file" "configure_atp_temp" {
+  template = file("./scripts/connect_atp.sh")
+
+  vars = {
+    ATP_alias = join("", [var.adb_db_name, "_medium"])
+    password  = var.adb_password
+
+  }
+}
+
+
+data "template_file" "atp_temp" {
+  template = file("./scripts/connect_atp.sh")
+
+  vars = {
+    ATP_alias = join("", [var.adb_db_name, "_medium"])
+    password  = var.adb_password
+
+  }
+}
+
 data "template_file" "flask_ATP_sh_template" {
   template = file("./scripts/flask_ATP.sh")
 
@@ -54,5 +90,24 @@ data "template_file" "sqlnet_ora_template" {
   vars = {
     oracle_instant_client_version_short = var.oracle_instant_client_version_short
   }
+}
+
+data "oci_objectstorage_namespace" "user_namespace" {
+
+  compartment_id = var.default_compartment_id
+
+}
+
+
+data "oci_database_autonomous_database_backups" "test_autonomous_database_backups" {
+  #Optional
+  compartment_id = var.default_compartment_id
+  display_name   = var.adb_display_name
+}
+
+data "oci_objectstorage_objects" "test_objects" {
+  #Required
+  bucket    = "${var.names_prefix}bucket"
+  namespace = data.oci_objectstorage_namespace.user_namespace.namespace
 }
 

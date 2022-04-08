@@ -8,11 +8,12 @@ locals {
   #########################
   ## ADB
   #########################
- #
- # adb_details = {
- #   adb            = module.adb.adb_database
- #   wallet_content = module.adb.adb_database.adb_wallet_content
- # }
+  #
+  # adb_details = {
+  #   adb            = module.adb.adb_database
+  #  wallet_content = module.adb.adb_database.adb_wallet_content
+  # }
+
 
 
   #########################
@@ -139,14 +140,19 @@ output "COA_Demo_Details" {
   }
 }
 
-
-
 #########################
-## APEX
+## Storage
 #########################
 
-#output "sql-developer_Web_URL" {
-#  value = "https://${oci_load_balancer_load_balancer.coa_load_balancer.ip_address_details[0].ip_address}:80/ords/sql-developer"
-#}
+output "bucket" {
+  value = {
+    bucketname = data.oci_objectstorage_objects.test_objects.bucket
+  }
+}
 
+output "database" {
+  value = {
+    adb            = module.adb[*].adb_database.adb_database_id
+  }
+}
 
